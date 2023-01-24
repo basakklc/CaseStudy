@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  CaseStudy
+
+  Created by Başak on 1/23/23.
+  
+*/
+
+"Login" = "LOGIN";
+"Email" = "Email";
+"Password" = "Password";
+"ForgotPass" = "I FORGOT MY PASS";
