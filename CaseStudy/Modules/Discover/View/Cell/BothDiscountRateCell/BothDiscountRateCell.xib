@@ -146,7 +146,6 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="RiT-4p-Qiw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="23Z-jl-Xmy"/>
-                <constraint firstItem="fm6-n2-JmZ" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.173387" id="Dmd-Tr-TMe"/>
                 <constraint firstItem="gKD-3Y-E1v" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.0483871" id="EI2-Db-9o8"/>
                 <constraint firstAttribute="bottom" secondItem="RiT-4p-Qiw" secondAttribute="bottom" id="J0O-0W-hbD"/>
                 <constraint firstAttribute="trailing" secondItem="RiT-4p-Qiw" secondAttribute="trailing" id="PiR-oP-Xqq"/>

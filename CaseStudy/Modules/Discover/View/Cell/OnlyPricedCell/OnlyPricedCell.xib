@@ -81,7 +81,6 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="dAc-zI-IqW" secondAttribute="trailing" id="Alh-am-dHD"/>
-                <constraint firstItem="EOF-Lw-yF6" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.238889" id="H65-0F-4GL"/>
                 <constraint firstItem="dAc-zI-IqW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Oqu-Uh-Vza"/>
                 <constraint firstItem="8WE-dX-3ff" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.172222" id="Xtd-RL-Z5a"/>
                 <constraint firstAttribute="bottom" secondItem="dAc-zI-IqW" secondAttribute="bottom" id="nAb-3S-HXp"/>
