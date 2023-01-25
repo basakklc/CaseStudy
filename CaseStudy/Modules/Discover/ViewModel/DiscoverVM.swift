@@ -68,13 +68,13 @@ extension DiscoverVM {
                  oldPrice = " \(String(describing: oPrice.value)) \(String(describing: oPrice.currency))"
             }
             
-            return DiscoverModel(cellType: requestType.getCellType(item: item) ,
-                          imageURL: item.imageUrl,
-                          description: item.description,
-                          price: price,
-                          oldPrice: oldPrice,
-                          discount: item.discount,
-                          ratePercentage: item.ratePercentage ?? 0)
+            return DiscoverModel(cellType: requestType.getCellType(item: item),
+                                 imageURL: item.imageUrl,
+                                 description: item.description,
+                                 price: price,
+                                 oldPrice: oldPrice,
+                                 discount: item.discount,
+                                 ratePercentage: item.ratePercentage ?? 0)
         }
         return mapped
     }

@@ -16,7 +16,7 @@ class AppRouter {
     }
     
     func start(){
-        let vc = TabbarVC()
+        let vc = ViewController()
         let navigationController = UINavigationController(rootViewController: vc)
         navigationController.setNavigationBarHidden(true, animated: true)
         window.rootViewController = navigationController

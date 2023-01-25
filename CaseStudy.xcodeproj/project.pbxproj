@@ -455,9 +455,9 @@
 		E90A6E24297C088D009A1788 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				E96AB5BA297C4F4900B82522 /* View */,
 				E96AB5BD297C4F5B00B82522 /* ViewModel */,
 				E96AB5BB297C4F4F00B82522 /* Repository */,
-				E96AB5BA297C4F4900B82522 /* View */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";

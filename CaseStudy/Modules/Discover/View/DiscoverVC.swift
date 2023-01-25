@@ -65,6 +65,7 @@ class DiscoverVC: BaseVC<DiscoverVM> {
                 if isFirst && isSecond && isThird { self.refreshControl.endRefreshing()}
             }).disposed(by: disposeBag)
         }
+        
         viewModel?.discoverFirstResponse.bind(to: firstCV.rx.items(cellIdentifier: "WithDiscountCell", cellType: WithDiscountCell.self)) {collectionView, model, cell  in
             cell.setModel(model: model)
         }.disposed(by: disposeBag)
@@ -75,15 +76,15 @@ class DiscoverVC: BaseVC<DiscoverVM> {
         
         viewModel?.discoverThirdResponse.bind(to: thirdCV.rx.items){(collectionView, row, model) -> UICollectionViewCell in
             if model.cellType == .bothDiscountRateCell {
-                let cell = self.thirdCV.dequeueReusableCell(withReuseIdentifier: "BothDiscountRateCell", for:  IndexPath(row: row, section: 0)) as! BothDiscountRateCell
+                let cell = self.thirdCV.dequeueReusableCell(withReuseIdentifier: BothDiscountRateCell.className, for:  IndexPath(row: row, section: 0)) as! BothDiscountRateCell
                 cell.setModel(model: model)
                 return cell
             }else if  model.cellType == .withDiscountCell {
-                let cell = self.thirdCV.dequeueReusableCell(withReuseIdentifier: "WithDiscountCell", for:  IndexPath(row: row, section: 0)) as! WithDiscountCell
+                let cell = self.thirdCV.dequeueReusableCell(withReuseIdentifier: WithDiscountCell.className, for:  IndexPath(row: row, section: 0)) as! WithDiscountCell
                 cell.setModel(model: model)
                 return cell
             }else  {
-                let cell = self.thirdCV.dequeueReusableCell(withReuseIdentifier: "WithRateCell", for: IndexPath(row: row, section: 0)) as! WithRateCell
+                let cell = self.thirdCV.dequeueReusableCell(withReuseIdentifier: WithRateCell.className, for: IndexPath(row: row, section: 0)) as! WithRateCell
                 cell.setModel(model: model)
                 return cell
             }
@@ -101,32 +102,24 @@ extension DiscoverVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        var paddingSpace = 0.0
-        var itemCount: CGFloat = 2.0
-        var widthPerItem: CGFloat = 0.0
-        var heightPerItem: CGFloat?
-        
-        if collectionView == firstCV {
-            itemCount = 2
-        }else if collectionView == secondCV {
-            itemCount = 3
-        }else if collectionView == thirdCV {
-            let item = viewModel?.discoverThirdResponse.value[indexPath.row]
-            if item?.cellType == .withRateCell {
-                heightPerItem = UIScreen.main.bounds.height * 0.38
-            }else{
-                heightPerItem = UIScreen.main.bounds.height * 0.29
-            }
-            
-            guard let heightPerItem = heightPerItem else { return CGSize(width: 0.0, height: 0.0)  }
-            paddingSpace = 4.0 * 2
-            return  CGSize(width: UIScreen.main.bounds.width / 2 - paddingSpace - 10.0, height: heightPerItem)
-        }
     
-        paddingSpace = 4.0 * itemCount
-        widthPerItem = (collectionView.bounds.width - paddingSpace) / itemCount
-        return  CGSize(width: widthPerItem, height: collectionView.frame.height)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+     
+        var itemCount: CGFloat = 1.0
+        var widthPerItem: CGFloat = 0.0
+        var heightPerItem: CGFloat = 0.0
+    
+        if collectionView == firstCV || collectionView == secondCV{
+            if collectionView == firstCV { itemCount = 2.0 }
+            else if collectionView == secondCV { itemCount = 3.0 }
+            widthPerItem = (collectionView.bounds.width - (4.0 * itemCount)) / itemCount
+            return  CGSize(width: widthPerItem, height: collectionView.frame.height)
+        }else {
+            let item = viewModel?.discoverThirdResponse.value[indexPath.row]
+            itemCount = 2.0
+            if item?.cellType == .withRateCell { heightPerItem = UIScreen.main.bounds.height * 0.38}
+            else{ heightPerItem = UIScreen.main.bounds.height * 0.29}
+            return  CGSize(width: UIScreen.main.bounds.width / itemCount - (4.0 * itemCount) - 10.0, height: heightPerItem)
+        }
     }
 }

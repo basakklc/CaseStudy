@@ -20,11 +20,10 @@ class LoginVC: BaseVC<LoginVM> {
     @IBOutlet weak var facebookBtn: UIButton!
     @IBOutlet weak var twitterBtn: UIButton!
     
+    var router: RouterProtocol!
     enum Route: String {
         case discover
     }
-    
-    var router: RouterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +36,6 @@ class LoginVC: BaseVC<LoginVM> {
         forgotPasswordBtn.layer.borderWidth = 1.0
         forgotPasswordBtn.layer.borderColor = Colors.borderColor?.cgColor
         forgotPasswordBtn.layer.cornerRadius = forgotPasswordBtn.frame.height / 2
-        
     }
     
     func bindUI()    {
@@ -61,7 +59,8 @@ class LoginVC: BaseVC<LoginVM> {
         }.disposed(by: disposeBag)
         
         twitterBtn.rx.tap.bind{
-            if let url = URL(string: StaticUrl.twitterUrl.rawValue) { UIApplication.shared.open(url) }
+            self.showMessage(withMessage: "ComingSoon".localized)
+//            if let url = URL(string: StaticUrl.twitterUrl.rawValue) { UIApplication.shared.open(url) }
         }.disposed(by: disposeBag)
     }
     
