@@ -31,5 +31,8 @@ class WithRateCell: CustomCVCell {
         for i in 0...(amount - 1) {
             stars?[i].image = UIImage(named: "FilledStar")
         }
+        for i in (amount)...4 {
+            stars?[i].image = UIImage(named: "BlankStar")
+        }
     }
 }
