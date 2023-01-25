@@ -70,7 +70,7 @@ class DiscoverVC: BaseVC<DiscoverVM> {
         }.disposed(by: disposeBag)
         
         viewModel?.discoverSecondResponse.bind(to: secondCV.rx.items(cellIdentifier: "OnlyPricedCell", cellType: OnlyPricedCell.self)) {collectionView, model, cell  in
-            cell.configure(model: model)
+            cell.setModel(model: model)
         }.disposed(by: disposeBag)
         
         viewModel?.discoverThirdResponse.bind(to: thirdCV.rx.items){(collectionView, row, model) -> UICollectionViewCell in
@@ -115,9 +115,9 @@ extension DiscoverVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayo
         }else if collectionView == thirdCV {
             let item = viewModel?.discoverThirdResponse.value[indexPath.row]
             if item?.cellType == .withRateCell {
-                heightPerItem = 328.0
+                heightPerItem = UIScreen.main.bounds.height * 0.38
             }else{
-                heightPerItem = 248.0
+                heightPerItem = UIScreen.main.bounds.height * 0.29
             }
             
             guard let heightPerItem = heightPerItem else { return CGSize(width: 0.0, height: 0.0)  }

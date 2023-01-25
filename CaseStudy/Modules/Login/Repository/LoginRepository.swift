@@ -14,13 +14,15 @@ protocol LoginRepositoryProtocol{
 }
 
 class LoginRepository: BaseRepository, LoginRepositoryProtocol{
+    var dataService: LoginDataService {
+        return LoginRemoteDataService()
+    }
+    
     func login() -> Observable<LoginResponse> {
-        NetworkManager.shared.request(.login)
+        dataService.login()
     }
     
     func credentialControl(email: String, password: String) -> Observable<Bool> {
         Observable.just((email == NetworkManager.user.email) && (password == NetworkManager.user.password))
     }
 }
-
-

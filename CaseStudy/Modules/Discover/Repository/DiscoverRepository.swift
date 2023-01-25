@@ -16,11 +16,9 @@ protocol DiscoverRepositoryProtocol{
 }
 
 class DiscoverRepository: BaseRepository, DiscoverRepositoryProtocol{
-    
-    var isReachable: Bool = true
-    let disposeBag: DisposeBag = DisposeBag()
-    
+
     var dataService: DiscoverDataService {
+        let reachability = try! Reachability()
         if reachability.connectionControl() {
             return DiscoverRemoteDataService()
         }
@@ -38,14 +36,4 @@ class DiscoverRepository: BaseRepository, DiscoverRepositoryProtocol{
     func getDiscoverThird() -> Observable<BaseResponse<[DiscoverResponse]>> {
         dataService.getDiscoverThird()
     }
-    
-//    func connectionControl() {
-//        let reachability = try! Reachability()
-//        switch reachability.connection {
-//        case .unavailable:
-//            isReachable = false
-//        default:
-//            isReachable = true
-//        }
-//    }
 }

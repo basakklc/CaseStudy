@@ -42,11 +42,18 @@ class LoginVC: BaseVC<LoginVM> {
     
     func bindUI()    {
         loginBtn.rx.tap.bind{
+            guard let email = self.emailTF.text else { return }
+            guard let password = self.passwordTF.text else { return }
+            if email.count == 0 || password.count == 0 { self.showMessage(withMessage: ErrorMessages.emptySpace ?? "") }
+            
+            let reachability = try! Reachability()
+            if !reachability.connectionControl() { self.showMessage(withMessage: ErrorMessages.notConnection ?? "") }
             self.viewModel?.login()
+            
         }.disposed(by: disposeBag)
         
         forgotPasswordBtn.rx.tap.bind{
-            
+            self.showMessage(withMessage: "ComingSoon".localized)
         }.disposed(by: disposeBag)
         
         facebookBtn.rx.tap.bind{
@@ -62,11 +69,11 @@ class LoginVC: BaseVC<LoginVM> {
         viewModel?.loginResponse.subscribe(onNext: { isLogin in
             guard let email = self.emailTF.text else { return }
             guard let password = self.passwordTF.text else { return }
-            isLogin ? self.viewModel?.credentialControl(email: email, password: password) : self.showMessage(withMessage: "Bo kontrol edin")
+            isLogin ? self.viewModel?.credentialControl(email: email, password: password) : self.showMessage(withMessage: ErrorMessages.loginDenied ?? "")
         }).disposed(by: disposeBag)
         
         viewModel?.isCredential.subscribe(onNext: { isCredential in
-            isCredential ? self.router.route(to: Route.discover.rawValue, from: self, parameters: nil) : self.showMessage(withMessage: "kontrol edin")
+            isCredential ? self.router.route(to: Route.discover.rawValue, from: self, parameters: nil) : self.showMessage(withMessage: ErrorMessages.loginIncorrectly ?? "")
         }).disposed(by: disposeBag)
     }
 

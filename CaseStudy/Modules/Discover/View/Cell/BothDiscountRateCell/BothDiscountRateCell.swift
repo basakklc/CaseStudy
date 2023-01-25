@@ -15,6 +15,7 @@ class BothDiscountRateCell: CustomCVCell {
     @IBOutlet weak var fourthStarImgView: UIImageView!
     @IBOutlet weak var fifthStarImgView: UIImageView!
     @IBOutlet weak var discountLbl: UILabel!
+    @IBOutlet weak var oldPriceLbl: UILabel!
     
     var stars: [UIImageView]?
     
@@ -27,6 +28,8 @@ class BothDiscountRateCell: CustomCVCell {
         super.configure(model: model)
         discountLbl.text = model.discount
         if let rate = model.ratePercentage { starConfigure(rate: rate ) }
+        guard let oldPriceLbl = oldPriceLbl else { return }
+        oldPriceLbl.attributedText = model.oldPrice.createAttributedString(stringToStrike: model.oldPrice)
     }
     
     func starConfigure(rate: Int)  {

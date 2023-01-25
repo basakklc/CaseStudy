@@ -62,14 +62,13 @@ class DiscoverVM: BaseVM {
 extension DiscoverVM {
     func createDiscoverModels(list: [DiscoverResponse], requestType: DiscoverRequestType) -> [DiscoverModel] {
         let mapped = list.map { item in
-           
             let price = " \(String(describing: item.price.value)) \(String(describing: item.price.currency))"
             var oldPrice = ""
             if let oPrice = item.oldPrice {
                  oldPrice = " \(String(describing: oPrice.value)) \(String(describing: oPrice.currency))"
             }
-          
-            return DiscoverModel(cellType: getCellType(requestType: requestType, item: item),
+            
+            return DiscoverModel(cellType: requestType.getCellType(item: item) ,
                           imageURL: item.imageUrl,
                           description: item.description,
                           price: price,
@@ -80,39 +79,9 @@ extension DiscoverVM {
         return mapped
     }
     
-    func getCellType(requestType: DiscoverRequestType, item: DiscoverResponse) -> DiscoverCVCellType {
-        var cellType: DiscoverCVCellType = .onlyPriced
-        switch requestType {
-        case .firstHorizontal:
-            cellType = .withDiscountCell
-        case .secondHorizontal:
-            cellType = .onlyPriced
-        case .thirdVertical:
-            if item.discount == "" && item.ratePercentage != nil {
-                cellType = .withRateCell
-            }else if item.discount != "" && item.ratePercentage != nil {
-                cellType = .bothDiscountRateCell
-            }else if item.discount != "" && item.ratePercentage == nil {
-                cellType = .withDiscountCell
-            }
-        }
-        return cellType
-    }
-    
-    func connectionControl() -> Bool{
-        let reachability = try! Reachability()
-        var isReachable: Bool = false
-        switch reachability.connection {
-        case .unavailable:
-            isReachable = false
-        default:
-            isReachable = true
-        }
-        return isReachable
-    }
-    
     func toCache(response: BaseResponse<[DiscoverResponse]>, requestType: DiscoverRequestType) {
-        if self.connectionControl(){
+        let reachability = try! Reachability()
+        if reachability.connectionControl(){
             CacheManager.shared.setObjectByKey(requestType.rawValue, cacheObject: response as AnyObject)
          }
     }

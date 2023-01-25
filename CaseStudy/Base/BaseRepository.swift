@@ -6,8 +6,7 @@
 //
 
 import Foundation
-import Reachability
 
 class BaseRepository {
-    let reachability = try! Reachability()
+
 }

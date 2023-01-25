@@ -10,15 +10,27 @@ import RxSwift
 
 struct DiscoverLocalDataService: DiscoverDataService {
     func getDiscoverFirst() -> Observable<BaseResponse<[DiscoverResponse]>> {
-        Observable.just(CacheManager.shared.getObjectByKey("firstHorizontal") as! BaseResponse<[DiscoverResponse]>)
+        guard let result = CacheManager.shared.getObjectByKey(DiscoverRequestType.firstHorizontal.rawValue) as? BaseResponse<[DiscoverResponse]> else {
+            let empty: BaseResponse<[DiscoverResponse]> = BaseResponse(list: [], isSuccess: false, message: "", statusCode: "")
+            return Observable.just(empty)
+        }
+        return Observable.just(result)
     }
     
     func getDiscoverSecond() -> Observable<BaseResponse<[DiscoverResponse]>> {
-        let result = CacheManager.shared.getObjectByKey("secondHorizontal")
-        return Observable.just(result as! BaseResponse<[DiscoverResponse]>)
+        guard let result = CacheManager.shared.getObjectByKey(DiscoverRequestType.secondHorizontal.rawValue) as? BaseResponse<[DiscoverResponse]> else {
+            let empty: BaseResponse<[DiscoverResponse]> = BaseResponse(list: [], isSuccess: false, message: "", statusCode: "")
+            return Observable.just(empty)
+        }
+        return Observable.just(result)
     }
     
     func getDiscoverThird() -> Observable<BaseResponse<[DiscoverResponse]>>{
-        Observable.just(CacheManager.shared.getObjectByKey("thirdVertical") as! BaseResponse<[DiscoverResponse]>)
+        guard let result = CacheManager.shared.getObjectByKey(DiscoverRequestType.thirdVertical.rawValue) as? BaseResponse<[DiscoverResponse]> else {
+            let empty: BaseResponse<[DiscoverResponse]> = BaseResponse(list: [], isSuccess: false, message: "", statusCode: "")
+            return Observable.just(empty)
+        }
+
+        return Observable.just(result)
     }
 }

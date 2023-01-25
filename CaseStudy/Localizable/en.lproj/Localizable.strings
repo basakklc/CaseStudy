@@ -9,4 +9,9 @@
 "Login" = "LOGIN";
 "Email" = "Email";
 "Password" = "Password";
+"EmptySpace" = "Fill in the requested information completely";
+"LoginIncorrectly" = "You logged in incorrectly, check your information";
+"LoginDenied" = "Login was denied by the server";
 "ForgotPass" = "I FORGOT MY PASS";
+"ComingSoon" = "With You Coming Soon";
+"NotConnection" = "Check your connection";

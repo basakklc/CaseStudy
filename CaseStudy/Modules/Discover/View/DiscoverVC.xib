@@ -32,7 +32,6 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="230-R4-eMb">
                     <rect key="frame" x="8" y="42" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="UgZ-ei-QYQ"/>
                         <constraint firstAttribute="width" secondItem="230-R4-eMb" secondAttribute="height" multiplier="1:1" id="tbB-Tq-y04"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -59,11 +58,6 @@
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="horizontalRowCount">
-                                            <integer key="value" value="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                 </collectionView>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0Kr-Yi-ryg" userLabel="SecondHorizontal">
                                     <rect key="frame" x="8" y="264" width="369" height="180"/>
@@ -74,11 +68,6 @@
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="horizontalRowCount">
-                                            <integer key="value" value="3"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                 </collectionView>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ydS-Nk-Ca3" userLabel="ThirdVertical">
                                     <rect key="frame" x="8" y="460" width="369" height="328"/>
@@ -92,11 +81,6 @@
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="verticalColumnCount">
-                                            <integer key="value" value="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                 </collectionView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,6 +120,7 @@
                 <constraint firstItem="230-R4-eMb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="42" id="c9A-Rg-7ab"/>
                 <constraint firstItem="JCy-QW-Ftq" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.29108" id="drQ-mf-e55"/>
                 <constraint firstItem="0Kr-Yi-ryg" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.211268" id="eDY-b9-sdR"/>
+                <constraint firstItem="230-R4-eMb" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0469484" id="ntK-J3-bef"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cmq-M5-mTe" secondAttribute="bottom" constant="8" id="reb-lg-o5L"/>
                 <constraint firstItem="dmz-Ch-2wJ" firstAttribute="centerY" secondItem="230-R4-eMb" secondAttribute="centerY" id="zA6-8v-ru1"/>
             </constraints>

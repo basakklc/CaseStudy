@@ -9,4 +9,9 @@
 "Login" = "GİRİŞ";
 "Email" = "Eposta";
 "Password" = "Parola";
+"EmptySpace" = "İstenen bilgileri eksiksiz doldurun";
+"LoginIncorrectly" = "Hatalı giriş yaptınız, bilgilerinizi kontrol edin";
+"LoginDenied" = "Login işlemi sunucu tarafından reddedildi";
 "ForgotPass" = "ŞİFREMİ UNUTTUM";
+"ComingSoon" = "Yakında Sizlerle";
+"NotConnection" = "Bağlantınızı kontrol edin";

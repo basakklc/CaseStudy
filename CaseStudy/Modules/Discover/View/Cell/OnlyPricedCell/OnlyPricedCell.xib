@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -82,6 +83,7 @@
                 <constraint firstAttribute="trailing" secondItem="dAc-zI-IqW" secondAttribute="trailing" id="Alh-am-dHD"/>
                 <constraint firstItem="EOF-Lw-yF6" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.238889" id="H65-0F-4GL"/>
                 <constraint firstItem="dAc-zI-IqW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Oqu-Uh-Vza"/>
+                <constraint firstItem="8WE-dX-3ff" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.172222" id="Xtd-RL-Z5a"/>
                 <constraint firstAttribute="bottom" secondItem="dAc-zI-IqW" secondAttribute="bottom" id="nAb-3S-HXp"/>
                 <constraint firstItem="dAc-zI-IqW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rYa-6C-Fne"/>
                 <constraint firstItem="wK9-qR-E6t" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.411111" id="vY3-Ik-i6T"/>

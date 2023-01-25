@@ -16,4 +16,3 @@ class BaseVM {
     var moyaError: MoyaError!
     let disposeBag = DisposeBag()
 }
-

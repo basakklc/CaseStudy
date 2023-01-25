@@ -103,7 +103,6 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="3AN-7d-BOz"/>
                         <constraint firstItem="1gP-e0-WCJ" firstAttribute="leading" secondItem="Yh8-Hr-MqP" secondAttribute="leading" id="CTs-UN-yM9"/>
                         <constraint firstAttribute="trailing" secondItem="1gP-e0-WCJ" secondAttribute="trailing" id="Vjl-C3-g4N"/>
                         <constraint firstItem="Gsr-PP-41Q" firstAttribute="trailing" secondItem="1gP-e0-WCJ" secondAttribute="trailing" id="aAJ-qD-2tx"/>
@@ -113,7 +112,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blH-l6-8L0" userLabel="LoginGradientBtn" customClass="GradientView" customModule="CaseStudy" customModuleProvider="target">
-                    <rect key="frame" x="16" y="594.66666666666663" width="361" height="40"/>
+                    <rect key="frame" x="16" y="661" width="361" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teQ-K8-uLv">
                             <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
@@ -151,7 +150,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mba-8Y-ryM">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mba-8Y-ryM" userLabel="ForgotPass">
                     <rect key="frame" x="186.66666666666666" y="744" width="20" height="20"/>
                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="10"/>
                     <inset key="contentEdgeInsets" minX="10" minY="4" maxX="10" maxY="4"/>
@@ -182,21 +181,22 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="qqt-FY-XIM" firstAttribute="top" secondItem="Pt1-Qd-swj" secondAttribute="bottom" constant="63" id="1B5-KB-Y6n"/>
                 <constraint firstItem="blH-l6-8L0" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0469484" id="1Up-cr-g8u"/>
                 <constraint firstAttribute="trailing" secondItem="Pt1-Qd-swj" secondAttribute="trailing" constant="91" id="2tk-F7-p0c"/>
                 <constraint firstItem="Pt1-Qd-swj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="92" id="4a7-5o-WWt"/>
+                <constraint firstItem="Pt1-Qd-swj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="5ob-h3-BMj"/>
+                <constraint firstItem="mba-8Y-ryM" firstAttribute="top" secondItem="blH-l6-8L0" secondAttribute="bottom" constant="43" id="8kn-AI-1ad"/>
                 <constraint firstAttribute="trailing" secondItem="qqt-FY-XIM" secondAttribute="trailing" constant="16" id="Aeb-zh-4BJ"/>
                 <constraint firstItem="qqt-FY-XIM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="BLZ-Tr-RuO"/>
-                <constraint firstItem="Pt1-Qd-swj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="159" id="DZL-Dm-lFO"/>
                 <constraint firstItem="blH-l6-8L0" firstAttribute="leading" secondItem="qqt-FY-XIM" secondAttribute="leading" id="EQk-ur-BLa"/>
                 <constraint firstItem="Yh8-Hr-MqP" firstAttribute="top" secondItem="qqt-FY-XIM" secondAttribute="bottom" constant="30" id="H5B-84-jn7"/>
-                <constraint firstItem="qqt-FY-XIM" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0704225" id="HSa-Lu-1Gw"/>
-                <constraint firstItem="qqt-FY-XIM" firstAttribute="top" secondItem="Pt1-Qd-swj" secondAttribute="bottom" constant="63" id="VZk-nS-bTc"/>
                 <constraint firstItem="S3o-fp-lMe" firstAttribute="top" secondItem="mba-8Y-ryM" secondAttribute="bottom" constant="16" id="WjU-Tn-dvB"/>
                 <constraint firstItem="Yh8-Hr-MqP" firstAttribute="leading" secondItem="qqt-FY-XIM" secondAttribute="leading" id="Xcr-yA-de2"/>
                 <constraint firstAttribute="bottom" secondItem="S3o-fp-lMe" secondAttribute="bottom" constant="16" id="cLA-PZ-unP"/>
-                <constraint firstItem="blH-l6-8L0" firstAttribute="top" secondItem="Yh8-Hr-MqP" secondAttribute="bottom" constant="145" id="gvl-Z2-b8v"/>
                 <constraint firstItem="S3o-fp-lMe" firstAttribute="trailing" secondItem="blH-l6-8L0" secondAttribute="trailing" id="kPU-xE-kZ7"/>
+                <constraint firstItem="Yh8-Hr-MqP" firstAttribute="height" secondItem="qqt-FY-XIM" secondAttribute="height" id="o6g-Oa-rGE"/>
+                <constraint firstItem="qqt-FY-XIM" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0704225" id="qnF-oi-87c"/>
                 <constraint firstItem="S3o-fp-lMe" firstAttribute="leading" secondItem="blH-l6-8L0" secondAttribute="leading" id="sho-4A-48Q"/>
                 <constraint firstItem="Yh8-Hr-MqP" firstAttribute="trailing" secondItem="qqt-FY-XIM" secondAttribute="trailing" id="taf-uE-Vkb"/>
                 <constraint firstItem="S3o-fp-lMe" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0657277" id="uU0-dR-Iz6"/>

@@ -12,7 +12,6 @@ class CustomCVCell: UICollectionViewCell {
     @IBOutlet weak var imgView: UIImageView?
     @IBOutlet weak var descLbl: UILabel?
     @IBOutlet weak var priceLbl: UILabel?
-    @IBOutlet weak var oldPriceLbl: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +22,6 @@ class CustomCVCell: UICollectionViewCell {
         imgView?.sd_setImage(with: URL(string: model.imageURL))
         descLbl?.text = model.description
         priceLbl?.text = model.price
-        guard let oldPriceLbl = oldPriceLbl else { return }
-        oldPriceLbl.attributedText = model.oldPrice.createAttributedString(stringToStrike: model.oldPrice)
     }
     
     func makeShadow() {

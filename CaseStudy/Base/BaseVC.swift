@@ -10,18 +10,24 @@ import RxSwift
 import RxReachability
 import Reachability
 
-class BaseVC<T>: UIViewController {
+class BaseVC<T>: UIViewController where T: BaseVM {
 
     var viewModel: T?
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel?.error.subscribe(onNext : {message  in
+            let alert = UIAlertController(title: "DefineX Case Study", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }).disposed(by: disposeBag)
     }
     
     func showMessage(withTitle _title: String? = "DefineX Case Study",
                      withMessage _message: String,
-                     buttonTitle: String? = "Tamam",
+                     buttonTitle: String? = "OK",
                      callBack: (()->())? = nil) {
         
         let alert = UIAlertController(title: _title!, message: _message, preferredStyle: .alert)

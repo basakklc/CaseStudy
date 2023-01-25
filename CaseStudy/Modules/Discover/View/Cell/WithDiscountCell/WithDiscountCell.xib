@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -44,16 +45,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jeq-57-c7m" userLabel="Price">
-                                <rect key="frame" x="8" y="193" width="106.33333333333333" height="31"/>
+                                <rect key="frame" x="8" y="193" width="154" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5,99 $US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gK3-q4-Jvl">
-                                        <rect key="frame" x="0.0" y="0.0" width="106.33333333333333" height="16.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="154" height="16.666666666666668"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                         <color key="textColor" name="TextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-sa-ld6">
-                                        <rect key="frame" x="0.0" y="16.666666666666657" width="106.33333333333333" height="14.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="16.666666666666657" width="154" height="14.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="5,99 $US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUy-7m-Q8e">
                                                 <rect key="frame" x="0.0" y="0.0" width="47.333333333333336" height="14.333333333333334"/>
@@ -75,7 +76,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="48% OFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXv-dw-3ya">
-                                                <rect key="frame" x="59.333333333333329" y="0.0" width="47" height="14.333333333333334"/>
+                                                <rect key="frame" x="59.333333333333321" y="0.0" width="94.666666666666686" height="14.333333333333334"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" red="0.96078431372549022" green="0.45882352941176469" blue="0.8901960784313725" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
@@ -95,17 +96,18 @@
                             <constraint firstItem="Jeq-57-c7m" firstAttribute="leading" secondItem="CsE-lg-irs" secondAttribute="leading" id="d7v-zm-9Q9"/>
                             <constraint firstItem="9AO-iP-cxq" firstAttribute="trailing" secondItem="CsE-lg-irs" secondAttribute="trailing" id="fXt-Bz-qVj"/>
                             <constraint firstAttribute="trailing" secondItem="CsE-lg-irs" secondAttribute="trailing" constant="8" id="rcW-FT-5cN"/>
+                            <constraint firstAttribute="bottom" secondItem="Jeq-57-c7m" secondAttribute="bottom" constant="24" id="uS9-ac-fwn"/>
                             <constraint firstItem="CsE-lg-irs" firstAttribute="leading" secondItem="JU0-H4-Ysh" secondAttribute="leading" constant="8" id="w65-Pc-che"/>
-                            <constraint firstAttribute="bottom" secondItem="Jeq-57-c7m" secondAttribute="bottom" constant="24" id="ySE-ND-Ge7"/>
+                            <constraint firstItem="Jeq-57-c7m" firstAttribute="trailing" secondItem="CsE-lg-irs" secondAttribute="trailing" id="zg3-Mj-r0w"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="9AO-iP-cxq" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.21371" id="27Y-ma-nJK"/>
                 <constraint firstItem="JU0-H4-Ysh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3KK-4Y-kvk"/>
                 <constraint firstItem="CsE-lg-irs" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.467742" id="4Ef-fv-aDN"/>
+                <constraint firstItem="Jeq-57-c7m" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.125" id="7n9-2E-tLH"/>
                 <constraint firstItem="JU0-H4-Ysh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EUS-QJ-292"/>
                 <constraint firstAttribute="bottom" secondItem="JU0-H4-Ysh" secondAttribute="bottom" id="axy-L4-Shy"/>
                 <constraint firstAttribute="trailing" secondItem="JU0-H4-Ysh" secondAttribute="trailing" id="y9C-BS-PXW"/>
